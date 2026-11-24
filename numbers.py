@@ -4,4 +4,13 @@
 
 # 2. Find the class average of the following test scores, rounded to one decimal place.
 #    Expected: 85.4
+
+for number in range(20, 101):
+    if number % 3 == 0:
+        print(number)
+
 scores = [88, 84, 100, 92, 70, 76, 76, 84, 86, 98]
+
+averageScore = sum(scores) / len(scores)
+
+print(round(averageScore, 1))

@@ -3,8 +3,13 @@ me = {
     'name': 'Jake Overall',
     'age': 29,
     'hair color': 'brown',
+    'city': "Phoenix"
 }
-
 
 # 2. Iterate over the object and print the property (key) names.
 #    Expected: name, age, hair color, city (order may vary)
+
+
+for propertyName in me:
+    print(propertyName)
+

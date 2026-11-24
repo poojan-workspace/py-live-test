@@ -31,8 +31,23 @@ crayola1990 = [
 
 
 def slugify(names):
-    # TODO
-    return []
+    slugs = []
+    slugCounts = {}
+
+    for name in names:
+        cleanName = name.strip()
+        cleanName = cleanName.lower()
+        cleanName = cleanName.replace("'", "")
+        baseSlug = "-".join(cleanName.split())
+        count = slugCounts.get(baseSlug, 0)
+        if count == 0:
+            finalSlug = baseSlug
+        else:
+            finalSlug = f"{baseSlug}-{count + 1}"
+        slugCounts[baseSlug] = count + 1
+        slugs.append(finalSlug)
+
+    return slugs
 
 
 print(slugify(crayola1990))
